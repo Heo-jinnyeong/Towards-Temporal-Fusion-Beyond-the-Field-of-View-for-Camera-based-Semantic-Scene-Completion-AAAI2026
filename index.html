@@ -362,20 +362,35 @@ performance gains when applied to other baseline models.
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <h2 class="title is-3">Qualitative Results</h2>
+      <h2 class="title is-3 has-text-centered">Qualitative Results</h2>
+
       <!-- TODO: Replace with your teaser video -->
-      <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
+      <video poster="" id="tree" autoplay controls muted loop playsinline height="150%" preload="metadata" style="width: 100%; height: auto; margin: 0 auto; display: block;">
         <!-- TODO: Add your video file path here -->
-        <source src="static/videos/gt_base_ours.mp4" type="video/mp4">
+        <source src="static/videos/merged_labeled_720p.mp4" type="video/mp4">
       </video>
+
       <!-- TODO: Replace with your video description -->
-      <h2 class="subtitle has-text-centered">
-        G.T. Baseline Ours
-      </h2>
+
     </div>
   </div>
 </section>
 <!-- End teaser video -->
+
+
+<div class="has-text-centered">
+  <a href="static/pdfs/qualitative_supple.pdf" target="_blank">
+    <img
+      src="static/images/suppl.jpg"
+      alt="Paper PDF preview"
+      style="max-width:80%; height:1280px;"
+    >
+  </a>
+  <h2 class="title is-5 has-text-centered" style="margin-top: 1.5rem;">
+    Visual comparison of our model against other recent camera-based methods on the SemanticKITTI validation set.
+  </h2>
+</div>
+
 
 
 
@@ -383,6 +398,7 @@ performance gains when applied to other baseline models.
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container is-max-widescreen has-text-centered">
+      <div style="margin-top: 5rem;">
       <h2 class="title is-3">Quantitative Results</h2>
       <h2 class="title is-5">SemanticKITTI hidden test set</h2>
       <img
