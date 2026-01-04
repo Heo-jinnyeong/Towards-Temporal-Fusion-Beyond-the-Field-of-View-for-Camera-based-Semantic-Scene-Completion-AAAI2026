@@ -301,18 +301,52 @@
   <div class="hero-body">
     <div class="container is-max-widescreen has-text-centered">
       <h2 class="title is-3">Overview</h2>
+
+      <div class="content has-text-justified mb-5">
+        <p>
+          Given a sequence of \( n \) RGB images
+          \( \{I_i\}_{i=t-n+1}^{t} \),
+          our objective is to predict voxel-wise semantic class probabilities
+          at time \( t \) within a voxelized 3D space
+          \( \mathbf{V} \in \mathbb{R}^{X \times Y \times Z \times P} \),
+          where \( P \) includes the empty class. Our
+          model follows the standard architectural paradigm of modern
+          camera-based SSC (Jiang et al. 2024; Yu et al. 2024;
+          Li et al. 2024a; Wang et al. 2025b), consisting of three main components: viewing transformation, voxel processing,
+          and semantic prediction. Among these, the proposed
+          C3DFusion module primarily focuses on the viewing transformation
+          stage, which plays a pivotal role in overall SSC
+          performance, as it performs both 2D-to-3D lifting and temporal
+geometry fusion.
+        </p>
+      </div>
+
       <img
         src="static/images/framework.png"
         alt="Figure 2: Overview of our temporal fusion framework"
         style="max-width: 100%; height: auto;"
       />
+
       <p class="subtitle is-6" style="margin-top: 1.5rem;">
-        An overview of our model, highlighting the proposed C3DFusion. The symbol ‘⊕’ denotes feature concatenation.
+        An overview of our model, highlighting the proposed C3DFusion.
+        The symbol ‘⊕’ denotes feature concatenation.
       </p>
     </div>
   </div>
 </section>
 <!-- End Teaser Figure -->
+
+<!-- MathJax (LaTeX rendering) -->
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['\\(', '\\)'], ['$', '$']]
+    },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
 
 
 <!-- Paper abstract -->
