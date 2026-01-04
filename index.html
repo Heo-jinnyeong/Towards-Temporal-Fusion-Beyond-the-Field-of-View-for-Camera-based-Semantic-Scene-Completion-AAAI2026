@@ -362,9 +362,28 @@ performance gains when applied to other baseline models.
   <div class="container is-max-desktop">
     <div class="hero-body">
       <h2 class="title is-3 has-text-centered">Qualitative Results</h2>
+      <div class="content has-text-justified">
+          <!-- TODO: Replace with your paper abstract -->
+          <p>
+            The visualization results presents a qualitative comparison
+between our method and existing open-source
+camera-based approaches on the SemanticKITTI validation
+set. In scenarios where critical semantic objects, such as
+cars and persons, are invisible but located very close to
+the ego-vehicle in the current frame, temporal-frame-based
+baseline methods like VoxFormer-T and HTCL-S fail to recover
+these OOV regions, showing performance comparable
+to CGFormer, which relies only on a single frame. In
+contrast, our approach successfully reconstructs the missing
+structures, demonstrating effective use of temporal cues to
+accurately capture their spatial context even in the absence
+of direct visual observations in the current frame.
+
+          </p>
+        </div>
 
       <!-- TODO: Replace with your teaser video -->
-      <video controls autoplay muted loop playsinline style="width:100%; height:auto;">
+      <video class="mt-5" controls autoplay muted loop playsinline style="width:100%; height:auto;">
     <source
     src="https://github.com/Heo-jinnyeong/Towards-Temporal-Fusion-Beyond-the-Field-of-View-for-Camera-based-Semantic-Scene-Completion-AAAI2026/releases/download/v1.0/merged_labeled_720p.mp4"
     type="video/mp4"
