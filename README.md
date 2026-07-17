@@ -1,79 +1,79 @@
-# Towards Temporal Fusion Beyond the Field of View for Camera-based Semantic Scene Completion
+# Towards Temporal Fusion Beyond the Field of View for Caemra-based Semantic Scene Completion
 
-# Academic Project Page Template
+##  News
+---
+- [2025/11/20] Code release
+- [2025/11/17] [**arXiv**](https://arxiv.org/abs/2511.12498) preprint released
+- [2025/11/08] Our paper has been accepted to AAAI2026!
 
-> **Update (September 2025)**: This template has been modernized with better design, SEO, and mobile support. For the original version, see the [original-version branch](https://github.com/eliahuhorwitz/Academic-project-page-template/tree/original-version).
+## Introduction
 
-A clean, responsive template for academic project pages.
+Recent camera-based 3D semantic scene completion (SSC) methods have increasingly explored leveraging temporal cues to enrich the features of the current frame. However, while these approaches primarily focus on enhancing in-frame regions, they often struggle to reconstruct critical out-of-frame areas near the sides of the ego-vehicle, although previous frames commonly contain valuable contextual information about these unseen regions. To address this limitation, we propose the Current-Centric Contextual 3D Fusion (C3DFusion) module, which generates hidden region-aware 3D feature geometry by explicitly aligning 3D-lifted point features from both current and historical frames. C3DFusion performs enhanced temporal fusion through two complementary techniques—historical context blurring and current-centric feature densification—which suppress noise from inaccurately warped historical point features by attenuating their scale, and enhance current point features by increasing their volumetric contribution. Simply integrated into standard SSC architectures, C3DFusion demonstrates strong effectiveness, significantly outperforming state-of-the-art methods on the SemanticKITTI and SSCBench-KITTI-360 datasets. Furthermore, it exhibits robust generalization, achieving notable performance gains when applied to other baseline models.
+
+## Method
+
+![overview](./docs/architecture.PNG)
+
+An overview of our model, highlighting the proposed C3DFusion. The symbol '⊕' denotes feature concatenation.
+
+## Quantitative Results
+
+![SemanticKITTI](./docs/SemKITTI_quantitative_res.PNG)
+
+![KITTI360](./docs/SSCBench_quantitative_res.PNG)
+
+## Getting Started
+
+step 1. Refer to [install.md](./docs/install.md) to install the environment.
+
+step 2. Refer to [dataset.md](./docs/dataset.md) to prepare SemanticKITTI and KITTI360 dataset.
+
+step 3. Refer to [train_and_eval.md](./docs/train_and_eval.md) for training and evaluation.
+
+step 4. Refer to [visualize.md](./docs/visualization.md) for visualization.
+
+## Model Zoo
+
+We provide the pretrained weights on SemanticKITTI and KITTI360 datasets, reproduced with the released codebase. The pretrained checkpoint efficientnet-seg-depth can be download from [here](https://github.com/pkqbajng/CGFormer/releases/download/v1.0/efficientnet-seg-depth.pth).
 
 
-Example project pages built using this template are:
-- https://horwitz.ai/probex
-- https://vision.huji.ac.il/probegen
-- https://horwitz.ai/mother
-- https://horwitz.ai/spectral_detuning
-- https://vision.huji.ac.il/ladeda
-- https://vision.huji.ac.il/dsire
-- https://horwitz.ai/podd
-- https://dreamix-video-editing.github.io
-- https://horwitz.ai/conffusion
-- https://horwitz.ai/3d_ads/
-- https://vision.huji.ac.il/ssrl_ad
-- https://vision.huji.ac.il/deepsim
 
+|                           Dataset                            |    Backbone    |        IoU         |        mIoU        |                        Model Weights                         |
+| :----------------------------------------------------------: | :------------: | :----------------: | :----------------: | :----------------------------------------------------------: |
+| [SemanticKITTI](configs/TFFormer-Efficient-Swin-SemanticKITTI.py) | EfficientNetB7 | 47.62, 49.53 (val) | 18.98, 19.31 (val) | [Link](https://drive.google.com/file/d/1TiUKGYVEVP1Io37CaD-P47CYT78wrRtC/view?usp=sharing) |
+|   [KITTI360](configs/TFFormer-Efficient-Swin-KITTI360.py)    | EfficientNetB7 |       49.28        |       21.74        | [Link](https://drive.google.com/file/d/1aMbsynM31r3azRBSUeXyIszGyu-m5VkQ/view?usp=sharing) |
 
+## Acknowledgement
 
-## Start using the template
-To start using the template click on `Use this Template`.
+Many thanks to these exceptional open source projects:
+- [BEVFormer](https://github.com/fundamentalvision/BEVFormer)
+- [mmdet3d](https://github.com/open-mmlab/mmdetection3d)
+- [MonoScene](https://github.com/astra-vision/MonoScene)
+- [semantic-kitti-api](https://github.com/PRBonn/semantic-kitti-api) 
+- [MobileStereoNet](https://github.com/cogsys-tuebingen/mobilestereonet)
+- [Symphonize](https://github.com/hustvl/Symphonies.git)
+- [DFA3D](https://github.com/IDEA-Research/3D-deformable-attention.git)
+- [VoxFormer](https://github.com/NVlabs/VoxFormer.git)
+- [OccFormer](https://github.com/zhangyp15/OccFormer.git)
+- [CGFormer](https://github.com/pkqbajng/CGFormer.git)
 
-The template uses html for controlling the content and css for controlling the style. 
-To edit the websites contents edit the `index.html` file. It contains different HTML "building blocks", use whichever ones you need and comment out the rest.  
+As it is not possible to list all the projects of the reference papers. If you find we leave out your repo, please contact us and we'll update the lists.
 
-**IMPORTANT!** Make sure to replace the `favicon.ico` under `static/images/` with one of your own, otherwise your favicon is going to be a dreambooth image of me.
+## Bibtex
 
-## What's New
+If you find our work beneficial for your research, please consider citing our paper and give us a star:
 
-- Modern, clean design with better mobile support
-- Improved SEO with proper meta tags and structured data
-- Performance improvements (lazy loading, optimized assets)
-- More Works dropdown
-- Copy button for BibTeX citations
-- Better accessibility
+```
 
-## Components
+@article{bae2025towards,
+  title={Towards Temporal Fusion Beyond the Field of View for Camera-based Semantic Scene Completion},
+  author={Bae, Jongseong and Ha, Junwoo and Heo, Jinnyeong and Lee, Yeongin and Kim, Ha Young},
+  journal={arXiv preprint arXiv:2511.12498},
+  year={2025}
+}
+```
 
-- Teaser video
-- Image carousel
-- YouTube video embedding
-- Video carousel
-- PDF poster viewer
-- BibTeX citation
-
-## Customization
-
-The HTML file has TODO comments showing what to replace:
-
-- Paper title, authors, institution, conference
-- Links (arXiv, GitHub, etc.)
-- Abstract and descriptions  
-- Videos, images, and PDFs
-- Related works in the dropdown
-- Meta tags for SEO and social sharing
-
-### Meta Tags
-The template includes meta tags for better search engine visibility and social media sharing. These appear in the `<head>` section and help with:
-- Google Scholar indexing
-- Social media previews (Twitter, Facebook, LinkedIn)
-- Search engine optimization
-
-Create a 1200x630px social preview image at `static/images/social_preview.png`.
-
-## Tips
-
-- Compress images with [TinyPNG](https://tinypng.com)
-- Use YouTube for large videos (>10MB)  
-- Replace the favicon in `static/images/`
-- Works with GitHub Pages
+If you encounter any issues, please contact gkwnsdn1130@gmail.com
 
 ## Acknowledgments
 Parts of this project page were adopted from the [Nerfies](https://nerfies.github.io/) page.
